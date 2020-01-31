@@ -41,6 +41,11 @@
                                 Users
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ route('sections.index') }}" class="navbar-brand">
+                                Sections
+                            </a>
+                        </li>
                     @endif
                 </ul>
 

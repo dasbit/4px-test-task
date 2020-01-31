@@ -13,12 +13,12 @@
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input name="name" type="text" class="form-control" id="name" placeholder="Enter name" required
-                               value="{{ $user->name }}">
+                               value="{{ old('name', $user->name) }}">
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input name="email" type="email" class="form-control" id="email" placeholder="Enter email" required
-                               value="{{ $user->email }}">
+                               value="{{ old('email', $user->email) }}">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>

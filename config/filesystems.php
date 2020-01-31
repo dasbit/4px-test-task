@@ -64,6 +64,11 @@ return [
             'url' => env('AWS_URL'),
         ],
 
+        'media' => [
+            'driver' => 'local',
+            'url' => env('APP_URL').'/media',
+            'root'   => public_path('media'),
+        ],
     ],
 
 ];
