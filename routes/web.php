@@ -11,6 +11,7 @@
 |
 */
 use Illuminate\Support\Facades\Route;
+use Illuminate\Routing\Router;
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,8 +19,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware(['auth'])->group(function (Router $router){
+    $router->get('/home', 'HomeController@index')->name('home');
+    $router->resource('/users', 'UsersController', ['except' => 'show']);
+    $router->resource('/sections', 'SectionsController', ['except' => 'show']);
+});
 
-Route::resource('/users', 'UsersController', ['except' => 'show']);
-
-Route::resource('/sections', 'SectionsController', ['except' => 'show']);
